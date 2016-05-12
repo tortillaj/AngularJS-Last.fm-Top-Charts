@@ -116,8 +116,8 @@
 
     figure {
       position: relative;
-      width: 150px;
-      height: 150px;
+      width: 135px;
+      height: 135px;
 
       @include breakpoint($bp-medium) {
         width: 174px;
