@@ -1,17 +1,47 @@
 .artist-list {
   &__header {
     @include cf;
-    background-color: $gray-dark;
+    background-color: $red;
     margin-bottom: $base-margin * 2;
-    padding: $base-margin 0;
+    padding: $base-margin 2 * $base-margin;
+
+    @include breakpoint($bp-medium) {
+      padding: $base-margin 0;
+    }
 
     h1 {
-      font-style: normal;
+      @include rem(font-size, 45px);
+      font-weight: 700;
+      font-family: 'Passion One', cursive;
+      letter-spacing: 0.03em;
+
+      @include breakpoint($bp-medium) {
+        float: left;
+      }
+
+      img {
+        float: left;
+        margin-right: 2 * $base-margin;
+      }
+
+      small {
+        @include rem(font-size, 22px);
+        font-family: Roboto, sans-serif;
+        letter-spacing: normal;
+        display: block;
+        clear: left;
+        margin-top: 16px;
+      }
     }
 
     .logo-lastfm {
-      float: right;
-      margin-top: 15px;
+      display: none;
+
+      @include breakpoint($bp-medium) {
+        display: block;
+        float: right;
+        margin-top: 15px;
+      }
     }
   }
 }

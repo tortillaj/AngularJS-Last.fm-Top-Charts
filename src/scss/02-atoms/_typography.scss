@@ -4,6 +4,7 @@ html {
 
 body {
   @include rem(font-size, 15px);
+  @include font-smoothing;
   line-height: 1.65;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;

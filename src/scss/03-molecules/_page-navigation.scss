@@ -1,5 +1,6 @@
 .page-navigation {
   float: right;
+  clear: right;
 
   &__item {
     @include inline-block;
