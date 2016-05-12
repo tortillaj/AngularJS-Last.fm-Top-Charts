@@ -1,0 +1,35 @@
+<article class="artist">
+    <section class="artist__name-image">
+        <h2 class="artist__name"><span>/////</span>   {{artist.name}}</h2>
+        <figure class="artist__image">
+            <img ng-src="{{artist.image[4]['#text']}}" alt="{{artist.name}}">
+            <figcaption>
+                <span class="artist__ext-links">
+                    <a class="artist__ext-link" href="{{artist.url}}" target="_blank">View on Last.fm</a>
+                </span>
+            </figcaption>
+        </figure>
+        <h3 class="artist__sub-header">About the artist</h3>
+        <div class="artist__bio" ng-bind-html="artist.bio.summary | to_trusted"></div>
+    </section>
+    <aside class="artist__details">
+        <h3 class="artist__sub-header">Popular tags</h3>
+        <ul class="artist__tags">
+            <li ng-repeat="tag in artist.tags.tag">
+                <a href="{{tag.url}}" target="_blank">{{tag.name}}</a>
+            </li>
+        </ul>
+        <h3 class="artist__sub-header">Similar artists</h3>
+        <ul class="artist__similar">
+            <li class="artist__similar-artist" ng-repeat="similar in artist.similar.artist | limitTo: 4">
+                <a href="{{similar.url}}" target="_blank">
+                    <figure>
+                        <img ng-src="{{similar.image[2]['#text']}}"
+                             alt="{{similar.name}}">
+                        <figcaption>{{similar.name}}</figcaption>
+                    </figure>
+                </a>
+            </li>
+        </ul>
+    </aside>
+</article>

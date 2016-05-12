@@ -1,0 +1,12 @@
+.page-navigation {
+  float: right;
+
+  &__item {
+    @include inline-block;
+    margin-right: $base-margin * 2;
+
+    span {
+      margin: 0 $base-margin * 2;
+    }
+  }
+}

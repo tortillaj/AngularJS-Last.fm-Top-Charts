@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "at-rule-empty-line-before": ["always", { ignore: ["all-nested"] }],
+    "function-url-quotes": "single",
+    "string-quotes": "single",
+    "no-missing-eof-newline": false
+  },
+  "ignoreFiles": [
+    "src/scss/vendor/**"
+  ]
+}

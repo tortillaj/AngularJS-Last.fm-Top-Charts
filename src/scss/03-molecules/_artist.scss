@@ -1,0 +1,148 @@
+.artist {
+  @include color-block($yellow);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $base-margin;
+  background-color: $gray-dark;
+  padding: 2 * $base-margin;
+
+  @include breakpoint($bp-medium) {
+    flex-direction: row;
+  }
+
+  &__name-image {
+    padding: $base-margin;
+
+    @include breakpoint($bp-medium) {
+      flex-basis: 60%;
+      padding: $base-margin 2 * $base-margin $base-margin;
+    }
+  }
+
+  &__details {
+    padding: $base-margin;
+
+    @include breakpoint($bp-medium) {
+      flex-basis: 40%;
+      padding: 65px $base-margin $base-margin 2 * $base-margin;
+    }
+  }
+
+  &__name {
+    margin-bottom: $base-margin;
+  }
+
+  &__sub-header {
+    margin-bottom: $base-margin;
+  }
+
+  &__image {
+    margin-bottom: 2 * $base-margin;
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__ext-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:after {
+      border: solid transparent;
+      border-left-color: $red;
+      border-top-color: $red;
+      border-left-color: rgba($red, 0.8);
+      border-top-color: rgba($red, 0.8);
+      border-width: 12px;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      content: ' ';
+      width: 0;
+      height: 0;
+    }
+  }
+
+  &__ext-link {
+    @include button;
+    @include rem(font-size, 13px);
+    background: $red;
+    background-color: rgba($red, 0.8);
+    text-transform: uppercase;
+    padding: 2px 12px;
+  }
+
+  &__tags {
+    @extend %list-zero;
+    @extend %list-no-style;
+    @extend %list-inline;
+    margin-bottom: 2 * $base-margin;
+
+    li {
+      margin-right: $base-margin;
+      margin-bottom: $base-margin;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      @include button;
+    }
+  }
+
+  &__similar {
+    @extend %list-zero;
+    @extend %list-no-style;
+    @extend %list-inline;
+
+    li {
+      float: left;
+      margin: 0 $base-margin $base-margin 0;
+
+      &:nth-child(2n + 1) {
+        clear: left;
+      }
+    }
+
+    a {
+      @include link-colors(#ffffff);
+      display: block;
+    }
+
+    figure {
+      position: relative;
+      width: 150px;
+      height: 150px;
+
+      @include breakpoint($bp-medium) {
+        width: 174px;
+        height: 174px;
+      }
+
+      img {
+        transition: all 0.5s ease-in-out;
+      }
+
+      figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 5px;
+        background-color: rgba(34, 34, 34, .5);
+        text-shadow: 0 1px 3px rgba(34, 34, 34, .8);
+      }
+
+      &:hover {
+        img {
+          filter: grayscale(1);
+        }
+      }
+    }
+  }
+}

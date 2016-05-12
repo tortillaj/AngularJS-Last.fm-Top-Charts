@@ -1,0 +1,31 @@
+<article class="artist-list">
+    <header class="artist-list__header">
+        <div class="inner-container">
+            <h1 class="artist-list__title">
+                <span><img src="/src/images/icon-music.png" alt="music icon" width="50" class="logo-site">Top Charts</span>
+                <a href="http://last.fm"><img src="/src/images/Last.fm_Logo_White-200x60.png" alt="Last.fm logo" class="logo-lastfm"></a>
+            </h1>
+
+            <div class="artist-list__header-content page-navigation">
+                <p class="page-navigation__item pagination">
+                    <button class="pagination__change" ng-click="prevPage()" ng-disabled="pagination.page === 1">
+                        Previous
+                    </button>
+                    <span class="pagination__current">Viewing page {{pagination.page}}</span>
+                    <button class="pagination__change" ng-click="nextPage()">Next</button>
+                </p>
+                <p class="page-navigation__item per-page">
+                    <select ng-model="pagination.limit" ng-change="filter()" id="perPage" title="Count per page">
+                        <option value="10" ng-selected="pagination.limit == 10">View 10 per page</option>
+                        <option value="25" ng-selected="pagination.limit == 25">View 25 per page</option>
+                        <option value="50" ng-selected="pagination.limit == 50">View 50 per page</option>
+                    </select>
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="inner-container">
+        <artist ng-repeat="artist in artists" data-name="{{artist.name}}"></artist>
+    </section>
+</article>

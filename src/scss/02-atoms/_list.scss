@@ -1,0 +1,14 @@
+%list-zero {
+  padding :0;
+  margin: 0;
+}
+
+%list-no-style {
+  list-style-type: none;
+}
+
+%list-inline {
+  li {
+    @include inline-block;
+  }
+}

@@ -1,0 +1,17 @@
+.artist-list {
+  &__header {
+    @include cf;
+    background-color: $gray-dark;
+    margin-bottom: $base-margin * 2;
+    padding: $base-margin 0;
+
+    h1 {
+      font-style: normal;
+    }
+
+    .logo-lastfm {
+      float: right;
+      margin-top: 15px;
+    }
+  }
+}

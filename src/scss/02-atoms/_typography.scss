@@ -1,0 +1,55 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include rem(font-size, 15px);
+  line-height: 1.65;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-shadow: 0 1px 1px rgba(34, 34, 34, .5);
+}
+
+h1, h2, h3, h4 {
+  font-weight: 500;
+  margin: 0;
+}
+
+h1 {
+  @include rem(font-size, 68px);
+  font-style: italic;
+  line-height: 1.2069;
+}
+
+h2 {
+  @include rem(font-size, 48px);
+  font-style: italic;
+  line-height: 1.08333;
+
+  span {
+    color: $teal;
+  }
+}
+
+h3 {
+  @include rem(font-size, 32px);
+  font-style: italic;
+  line-height: 1.25;
+}
+
+a {
+  @include link-colors($teal, darken($teal, 10%));
+  transition: color 0.5s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button {
+  appearance: none;
+  border: none;
+  @include button;
+}
